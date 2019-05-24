@@ -27,8 +27,7 @@
     "register-service-worker": "^1.6.2",
     "vant": "^1.6.19",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
+    "vue-router": "^3.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",

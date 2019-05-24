@@ -1,5 +1,8 @@
 const path = require('path')
 const CompressionPlugin = require('compression-webpack-plugin')
+const autoprefixer = require('autoprefixer')
+const pxtorem = require('postcss-pxtorem')
+
 function resolve (dir) {
   return path.join(__dirname, './', dir)
 }
@@ -10,8 +13,7 @@ module.exports = {
     port: 8520
   },
 
-  publicPath: `/${process.env.NODE_ENV}`,
-  // process.env.NODE_ENV === 'production' ? '' : '/development',
+  productionSourceMap: false,
 
   css: {
     loaderOptions: {
@@ -23,6 +25,17 @@ module.exports = {
           orange: '#FF8960',
           'text-color': '#111'
         }
+      },
+      postcss: {
+        plugins: [
+          autoprefixer(),
+          pxtorem({
+            rootValue: 37.5,
+            propList: ['*'],
+            selectorBlackList: ['van-'],
+            minPixelValue: 2
+          })
+        ]
       }
     }
   },
@@ -68,5 +81,9 @@ module.exports = {
     config.module
       .rule('images')
       .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+  },
+  pwa: {
+    msTileColor: '#007CF9',
+    themeColor: '#007CF9'
   }
 }
