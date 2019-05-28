@@ -1,13 +1,5 @@
 <template>
   <div class="hello">
-    <van-button type="primary" size="large">大号按钮</van-button>
-<van-button type="primary" size="normal">普通按钮</van-button>
-<van-button type="primary" size="small">小型按钮</van-button>
-<van-button type="primary" size="mini">迷你按钮</van-button>
-<van-cell-group style="text-align: left;">
-  <van-cell title="单元格" value="内容" />
-  <van-cell title="单元格" value="内容" label="描述信息" />
-</van-cell-group>
     <h1 class="test">{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -41,16 +33,10 @@
 </template>
 
 <script>
-import { Button, Cell, CellGroup } from 'vant'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  },
-  components: {
-    [Button.name]: Button,
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup
   },
   created () {
   }
