@@ -38,6 +38,11 @@ export default {
   props: {
     msg: String
   },
+  data () {
+    return {
+      test: 0
+    }
+  },
   created () {
   }
 }
