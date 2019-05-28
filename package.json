@@ -4,16 +4,16 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "serve:test": "vue-cli-service serve --mode test",
-    "serve:production": "vue-cli-service serve --mode production",
-    "build:development": "vue-cli-service build --mode development",
-    "build:test": "vue-cli-service build --mode test",
-    "build:production": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
-    "test:watch": "jest --watch",
+    "build:development": "vue-cli-service build --mode development",
+    "build:production": "vue-cli-service build --mode production",
+    "build:test": "vue-cli-service build --mode test",
+    "serve:production": "vue-cli-service serve --mode production",
+    "serve:test": "vue-cli-service serve --mode test",
     "test:clear-cache": "jest --clearCache",
-    "test:coverage": "open tests/coverage/index.html"
+    "test:coverage": "open tests/coverage/index.html",
+    "test:unit": "vue-cli-service test:unit",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "autoprefixer": "^9.5.1",
@@ -31,7 +31,8 @@
     "register-service-worker": "^1.6.2",
     "vant": "^1.6.19",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
