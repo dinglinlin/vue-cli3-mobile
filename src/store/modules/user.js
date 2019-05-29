@@ -5,6 +5,24 @@ const state = {
   userInfo: {
     name: 'smalin',
     age: 24
+  },
+  todos: [
+    {
+      id: 1,
+      done: false,
+      name: 'smalin'
+    }, {
+      id: 2,
+      done: true,
+      name: 'dinglin'
+    }
+  ]
+}
+
+// getters
+const getters = {
+  doneTodos: state => {
+    return state.todos.filter(todo => todo.done)
   }
 }
 
@@ -23,6 +41,7 @@ const actions = {
 export default {
   namespaced: true,
   state,
+  getters,
   actions,
   mutations
 }
