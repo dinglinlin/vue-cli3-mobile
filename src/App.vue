@@ -1,16 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <nav id="nav">
+      <span @click="to('/')">Home</span> |
+      <span @click="to('/about')">About</span>
+    </nav>
+    <transition name="van-fade">
+      <router-view />
+    </transition>
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    to (router) {
+      this.$router.push(router)
+    }
+  }
+}
+</script>
+
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -24,6 +36,15 @@
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+}
+.van-fade {
+  &-enter-active {
+    animation: .5s van-fade-in;
+  }
+
+  &-leave-active {
+    animation: 0s van-fade-out;
   }
 }
 </style>

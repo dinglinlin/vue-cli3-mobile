@@ -3,8 +3,11 @@ import App from './App.vue'
 import router from './router/index'
 import store from './store/index'
 import './registerServiceWorker'
-
+import base from '@/utils/base'
+import { Toast } from 'vant'
 import FastClick from 'fastclick'
+Vue.use(base)
+Vue.use(Toast)
 Vue.config.productionTip = false
 
 if ('addEventListener' in document && 'ontouchstart' in window) {
