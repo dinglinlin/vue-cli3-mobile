@@ -10,7 +10,8 @@ function resolve (dir) {
 module.exports = {
 
   devServer: {
-    port: 8520
+    port: 8520,
+    open: true
   },
 
   productionSourceMap: false,
@@ -46,6 +47,10 @@ module.exports = {
       args[0]['process.env'].BASE_URL = JSON.stringify(process.env.BASE_URL)
       return args
     })
+    // 对打包的文件进行 hash 处理，防止缓存
+    config
+      .output
+      .filename('[hash].js')
     if (process.env.NODE_ENV === 'production') {
       // #region 启用GZip压缩
       config
