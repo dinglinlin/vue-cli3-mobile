@@ -18,6 +18,9 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  created () {
+    this.$toast('test')
   }
 }
 </script>
