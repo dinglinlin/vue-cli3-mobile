@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <nav id="nav">
-      <span @click="to('/')">Home</span> |
-      <span @click="to('/about')">About</span>
-    </nav>
     <transition name="van-fade">
       <router-view />
     </transition>
@@ -12,15 +8,10 @@
 
 <script>
 export default {
-  methods: {
-    to (router) {
-      this.$router.push(router)
-    }
-  }
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
