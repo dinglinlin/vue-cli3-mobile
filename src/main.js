@@ -6,6 +6,8 @@ import './registerServiceWorker'
 import base from '@/utils/base'
 import { Toast } from 'vant'
 import FastClick from 'fastclick'
+// icon 引入
+import '@/icons'
 Vue.use(base)
 Vue.use(Toast)
 Vue.config.productionTip = false
