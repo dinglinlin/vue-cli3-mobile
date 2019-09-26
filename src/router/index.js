@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import TheLayout from '@/views/TheLayout.vue'
 
+import { getToken } from '@/utils/auth'
+
 Vue.use(Router)
 const IndexRoute = {
   path: '/',
@@ -37,8 +39,28 @@ routerContext.keys().forEach(route => {
   IndexRoute.children = [...IndexRoute.children, ...(routerModule.default || routerModule)]
 })
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
+
+const whiteList = ['/login']
+
+router.beforeEach((to, form, next) => {
+  if (getToken()) {
+    if (to.path === '/login') {
+      next('/home')
+    } else {
+      next()
+    }
+  } else {
+    if (whiteList.includes(to.path)) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
+})
+
+export default router
